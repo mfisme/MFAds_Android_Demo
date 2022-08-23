@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dqd.smarttool">
+
+    <uses-sdk tools:overrideLibrary="com.bun.miitmdid,com.mfads.supplier.ks,com.kwad.sdk,com.flayone.oaid,com.miui.zeus.mimo.sdk,com.bytedance.sdk.openadsdk,com.mfads.supplier.is,com.mfads.supplier.gg" />
+
+    <!--必须要有的权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!--最好能提供的权限-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 如果有视频相关的广告且使用textureView播放，请务必添加，否则黑屏 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <application
+        android:name="com.mfads.demo.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/netwc"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme">
+
+
+        <activity android:name="com.mfads.demo.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.mfads.demo.SplashActivity" />
+        <activity android:name="com.mfads.demo.NativeExpressActivity" />
+        <activity android:name="com.mfads.demo.RewardVideoActivity" />
+        <activity android:name="com.mfads.demo.BannerActivity" />
+        <activity android:name="com.mfads.demo.FullScreenVideoActivity" />
+        <activity
+            android:name="com.mfads.demo.InterstitialActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+        <activity android:name="com.mfads.demo.SplashToMainActivity" />
+
+
+        <activity android:name="com.mfads.demo.NativeExpressRecyclerViewActivity" />
+        <activity
+            android:name="com.mfads.demo.DrawActivity"
+            android:configChanges="keyboard|orientation|screenSize" />
+        <activity android:name="com.mfads.demo.custom.CustomActivity" />
+
+        <!--        小米广告SDK需要          -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/xm_file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+
+    </application>
+
+</manifest>
