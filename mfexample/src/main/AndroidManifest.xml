@@ -30,7 +30,9 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name="com.mfads.demo.MainActivity">
+        <activity
+            android:name="com.mfads.demo.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -39,22 +41,42 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.mfads.demo.SplashActivity" />
-        <activity android:name="com.mfads.demo.NativeExpressActivity" />
-        <activity android:name="com.mfads.demo.RewardVideoActivity" />
-        <activity android:name="com.mfads.demo.BannerActivity" />
-        <activity android:name="com.mfads.demo.FullScreenVideoActivity" />
+        <activity
+            android:name="com.mfads.demo.SplashLogoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.mfads.demo.SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.mfads.demo.NativeExpressActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.mfads.demo.RewardVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.mfads.demo.BannerActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.mfads.demo.FullScreenVideoActivity"
+            android:exported="false" />
         <activity
             android:name="com.mfads.demo.InterstitialActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:exported="false" />
         <activity android:name="com.mfads.demo.SplashToMainActivity" />
 
 
-        <activity android:name="com.mfads.demo.NativeExpressRecyclerViewActivity" />
+        <activity
+            android:name="com.mfads.demo.NativeExpressRecyclerViewActivity"
+            android:exported="false" />
         <activity
             android:name="com.mfads.demo.DrawActivity"
-            android:configChanges="keyboard|orientation|screenSize" />
-        <activity android:name="com.mfads.demo.custom.CustomActivity" />
+            android:configChanges="keyboard|orientation|screenSize"
+            android:exported="false" />
+        <activity
+            android:name="com.mfads.demo.custom.CustomActivity"
+            android:exported="false" />
 
         <!--        小米广告SDK需要          -->
         <provider
@@ -69,7 +91,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-3940256099942544~3347511713" />
 
     </application>
 

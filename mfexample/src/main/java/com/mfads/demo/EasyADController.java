@@ -25,12 +25,14 @@ import com.mfads.core.reward.EARewardVideoListener;
 import com.mfads.core.reward.MFAdRewardVideo;
 import com.mfads.core.splash.EASplashListener;
 import com.mfads.core.splash.MFAdSplash;
+import com.mfads.core.splash.MfAdLogoSplash;
 import com.mfads.demo.custom.HuaWeiSplashAdapter;
 import com.mfads.demo.custom.XiaoMiSplashAdapter;
 import com.mfads.model.EasyAdError;
 import com.mfads.utils.EALog;
 import com.mfads.utils.ScreenUtil;
 import com.hjq.toast.ToastUtils;
+import com.mfutils.model.LogoSetting;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -126,6 +128,51 @@ public class EasyADController {
 
         //必须：请求并展示广告
         easySplash.loadAndShow();
+        logAndToast(mActivity, "广告请求中");
+    }
+
+    public void loadSplashWithLogo(final ViewGroup adContainer, LogoSetting logoSetting, boolean singleActivity, final SplashCallBack callBack) {
+        //必须：设置开屏核心回调事件的监听器。
+        EASplashListener listener = new EASplashListener() {
+
+            @Override
+            public void onAdClose() {
+                if (callBack != null)
+                    callBack.jumpMain();
+
+                logAndToast(mActivity, "广告关闭");
+            }
+
+            @Override
+            public void onAdSucceed() {
+                logAndToast(mActivity, "广告加载成功");
+            }
+
+            @Override
+            public void onAdExposure() {
+                //设置开屏父布局背景色为白色
+                if (adContainer != null)
+                    adContainer.setBackgroundColor(Color.WHITE);
+
+                logAndToast(mActivity, "广告展示成功");
+            }
+
+            @Override
+            public void onAdFailed(EasyAdError error) {
+                logAndToast(mActivity, "广告加载失败 code=" + error.code + " msg=" + error.msg);
+            }
+
+            @Override
+            public void onAdClicked() {
+                logAndToast(mActivity, "广告点击");
+            }
+        };
+
+        MfAdLogoSplash mfAdLogoSplash = new MfAdLogoSplash(mActivity, adContainer, logoSetting, listener);
+        baseAD = mfAdLogoSplash;
+        mfAdLogoSplash.setShowInSingleActivity(singleActivity);
+
+        mfAdLogoSplash.loadAndShow();
         logAndToast(mActivity, "广告请求中");
     }
 

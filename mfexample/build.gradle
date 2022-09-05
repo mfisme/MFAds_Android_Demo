@@ -67,7 +67,8 @@ repositories {
 
 
         // 必须 ads 核心代码
-        implementation 'io.github.mfisme:mfads-core:0.0.4'
+//        implementation 'io.github.mfisme:mfads-core:0.0.4'
+        implementation(name: 'mfads-release', ext: 'aar')
         // 优量汇广告SDK
         implementation 'io.github.mfisme:mfads-ylh:0.0.3'
         // 百度广告SDK

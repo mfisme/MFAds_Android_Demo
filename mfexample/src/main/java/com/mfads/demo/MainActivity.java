@@ -95,6 +95,11 @@ public class MainActivity extends BaseActivity {
         startActivity(intent);
     }
 
+    public void onSplashLogo(View view){
+        Intent intent = new Intent(this, SplashLogoActivity.class);
+        startActivity(intent);
+    }
+
     public void onNativeExpress(View view) {
         startActivity(new Intent(this, NativeExpressActivity.class));
     }

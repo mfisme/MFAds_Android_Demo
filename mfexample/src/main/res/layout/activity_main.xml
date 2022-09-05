@@ -27,6 +27,7 @@
             android:id="@+id/cb_log"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:checked="true"
             android:text="晃动手机查看SDK执行日志" />
 
@@ -62,6 +63,12 @@
                 android:text="开屏(dialog)" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/splash_logo_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onSplashLogo"
+            android:text="开屏 默认Logo样式(Activity)" />
 
         <Button
             android:id="@+id/interstitial_button"
@@ -113,13 +120,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="customChannel"
+            android:visibility="gone"
             android:text="自定义支持其他广告SDK" />
-
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
 
         <TextView
             android:id="@+id/tv_version"
