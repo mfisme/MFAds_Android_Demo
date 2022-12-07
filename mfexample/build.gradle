@@ -65,26 +65,28 @@ repositories {
         implementation 'com.github.pedrovgs:lynx:1.1.0' //显示logcat插件
         implementation 'com.github.getActivity:ToastUtils:9.6' //toast组件
 
+//        使用aar接入
+//        implementation(name: 'mfads-release',ext: 'aar')
+//        implementation(name: 'mfylh-release',ext: 'aar')
+//        implementation(name: 'mfcsj-release',ext: 'aar')
+//        implementation(name:'mfgg-release',ext: 'aar')
+//        implementation 'com.google.android.gms:play-services-ads:21.1.0'
 
+
+        // 使用依赖
         // 必须 ads 核心代码
         implementation 'io.github.mfisme:mfads-core:0.0.15'
-
         // 优量汇广告SDK
         implementation 'io.github.mfisme:mfads-ylh:0.0.3'
-
         // 百度广告SDK
         implementation 'io.github.mfisme:mfads-bd:0.0.3'
-
         // 穿山甲广告SDK
         implementation 'io.github.mfisme:mfads-csj:0.0.3'
-
         // 快手广告SDK
         implementation 'io.github.mfisme:mfads-ks:0.0.3'
-
         // Google广告SDK
         implementation 'io.github.mfisme:mfads-gg:0.0.8'
         implementation 'com.google.android.gms:play-services-ads:21.1.0'
-
         // Facebook广告SDK
         implementation 'io.github.mfisme:mfads-fb:0.0.3'
 
