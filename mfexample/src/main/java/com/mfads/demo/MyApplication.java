@@ -38,7 +38,7 @@ public class MyApplication extends Application {
     public void initSDK() {
         //设置debug模式，日志可分等级打印，默认只打印简单的事件信息
         MFAds.setDebug(BuildConfig.DEBUG, EALogLevel.DEFAULT);
-        MFAds.init(this,"Hl7lBsYOCPS8BtMN");
+        MFAds.init(this,"69lSe9cvORWnd62o");
 
         //自定义渠道-华为广告的初始化，如果不需要自定义可忽略此处
         HwAds.init(this);

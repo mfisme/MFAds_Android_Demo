@@ -67,18 +67,24 @@ repositories {
 
 
         // 必须 ads 核心代码
-//        implementation 'io.github.mfisme:mfads-core:0.0.4'
-        implementation(name: 'mfads-release', ext: 'aar')
+        implementation 'io.github.mfisme:mfads-core:0.0.15'
+
         // 优量汇广告SDK
         implementation 'io.github.mfisme:mfads-ylh:0.0.3'
+
         // 百度广告SDK
         implementation 'io.github.mfisme:mfads-bd:0.0.3'
+
         // 穿山甲广告SDK
         implementation 'io.github.mfisme:mfads-csj:0.0.3'
+
         // 快手广告SDK
         implementation 'io.github.mfisme:mfads-ks:0.0.3'
+
         // Google广告SDK
-        implementation 'io.github.mfisme:mfads-gg:0.0.4'
+        implementation 'io.github.mfisme:mfads-gg:0.0.8'
+        implementation 'com.google.android.gms:play-services-ads:21.1.0'
+
         // Facebook广告SDK
         implementation 'io.github.mfisme:mfads-fb:0.0.3'
 
